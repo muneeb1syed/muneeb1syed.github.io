@@ -2748,6 +2748,8 @@ input, select, textarea {
 			#header > header h1 {
 				font-size: 1.75em;
 				margin: 0;
+				color:#000000;
+				
 			}
 
 			#header > header p {
