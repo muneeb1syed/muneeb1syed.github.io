@@ -2823,6 +2823,9 @@ input, select, textarea {
 		background: #fff;
 		padding-right: 23em;
 	}
+	video{
+		width: 100%;
+	}
 
 /* Main */
 
