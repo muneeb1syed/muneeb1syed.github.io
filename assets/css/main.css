@@ -2687,6 +2687,7 @@ input, select, textarea {
 
 /* Header */
 
+
 	#header {
 		display: -moz-flex;
 		display: -webkit-flex;
@@ -2709,8 +2710,10 @@ input, select, textarea {
 		top: 0;
 		width: 23em;
 		right: 0;
+	
+		
 	}
-
+	
 		#header h1, #header h2, #header h3, #header h4, #header h5, #header h6 {
 			color: #ffffff;
 		}
