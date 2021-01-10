@@ -131,7 +131,9 @@ input, select, textarea {
 
 	p {
 		margin: 0 0 2.25em 0;
+		indent { text-indent: 30px; }
 	}
+	.indent { text-indent: 30px; }
 
 	h1, h2, h3, h4, h5, h6 {
 		color: #777;
@@ -3119,7 +3121,7 @@ input, select, textarea {
 	@media screen and (max-width: 736px) {
 
 		/* Basic */
-
+	
 			body, input, select, textarea {
 				font-size: 12pt;
 			}
